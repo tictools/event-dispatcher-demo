@@ -4,7 +4,7 @@ type UserProps = {
 
 export default function User({ user }: UserProps) {
   return (
-    <div key={user.id}>
+    <div>
       <img alt={user.email} src={user.avatar} />
       <li >{user.first_name}</li>
     </div>
