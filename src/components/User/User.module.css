@@ -1,0 +1,38 @@
+.user__container {
+  align-items: center;
+  background-color: #ffffff11;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 2rem 0;
+  padding: 1rem;
+}
+
+.user__container:last-child {
+  margin: 0;
+}
+
+.user__avatar {
+  width: 3.5rem;
+  border-radius: 50%;
+}
+
+.user__info {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.user__name {
+  border-radius: 50%;
+  font-weight: 800;
+  margin: 0;
+  padding: 8px 0;
+}
+
+.user__email {
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin: 0;
+}

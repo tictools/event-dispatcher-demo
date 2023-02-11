@@ -5,7 +5,7 @@ import useFetchRequest from "./hooks/useFetchRequest";
 import UsersList from "./views/UsersList";
 
 function App(): JSX.Element {
-  const requestStatus = useFetchRequest("https://reqres.in/api/users");
+  const requestStatus = useFetchRequest("https://reqres.in/api/users?per_page=5");
 
   return (
     <div className="App">
