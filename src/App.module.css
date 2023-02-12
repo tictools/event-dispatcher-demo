@@ -1,0 +1,13 @@
+.app__wrapper {
+  width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.app__title {
+  text-align: center;
+}
+.app__sections-wrapper {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
