@@ -1,3 +1,3 @@
-export default function LoaderRequest() {
+export default function LoaderRequest () {
   return (<p>Loading... </p>)
 }

@@ -1,8 +1,8 @@
-import { useState } from "react"
+import { useState } from 'react'
 import styles from './UserForm.module.css'
 
-type UserFormState = {
-  name: string,
+interface UserFormState {
+  name: string
   email: string
 }
 
@@ -11,7 +11,7 @@ const INITIAL_FORM_STATE = {
   email: ''
 }
 
-export default function UserForm() {
+export default function UserForm () {
   const [formState, setFormState] = useState<UserFormState>(INITIAL_FORM_STATE)
 
   const handleOnChangeName = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,8 +42,8 @@ export default function UserForm() {
   const isSubmitDisabled = () => !formState.name || !formState.email
 
   return (
-    <div className={styles['form__container']}>
-      <form className={styles['form__wrapper']}>
+    <div className={styles.form__container}>
+      <form className={styles.form__wrapper}>
         <label>
           Name
           <input type='text' value={formState.name} onChange={handleOnChangeName} />

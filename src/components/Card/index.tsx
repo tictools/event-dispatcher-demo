@@ -1,16 +1,15 @@
 import styles from './Card.module.css'
 
-type CardProps = {
+interface CardProps {
   header: string
   children: JSX.Element
 }
 
-
-export default function Card({ header, children }: CardProps) {
+export default function Card ({ header, children }: CardProps) {
   return (
-    <section >
+    <section>
       <h2>{header}</h2>
-      <div className={styles['card__container']}>{children}</div>
+      <div className={styles.card__container}>{children}</div>
     </section>
   )
 }
