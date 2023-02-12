@@ -1,4 +1,4 @@
-import User from "../../components/User"
+import User from "../User"
 import styles from './UsersList.module.css'
 
 type UsersListProps = {
