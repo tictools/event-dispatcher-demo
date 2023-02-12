@@ -1,4 +1,4 @@
-const fetchRequest = async (url: string) => {
+const requestData = async (url: string) => {
   try {
     const response = await globalThis.fetch(url)
     if (response.ok) {
@@ -12,4 +12,4 @@ const fetchRequest = async (url: string) => {
   }
 }
 
-export default fetchRequest
+export default requestData

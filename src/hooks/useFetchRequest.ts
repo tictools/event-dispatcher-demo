@@ -41,7 +41,7 @@ export default function useFetchRequest<GenericType>(url: string) {
       state: 'loading'
     }))
 
-    http.fetchRequest(url).then(handleRequestSuccess).catch(handleRequestError)
+    http.requestData(url).then(handleRequestSuccess).catch(handleRequestError)
   }, [url])
 
   return requestStatus
