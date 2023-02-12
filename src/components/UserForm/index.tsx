@@ -2,29 +2,24 @@ import { useState } from 'react'
 import styles from './UserForm.module.css'
 
 interface UserFormState {
-  name: string
+  first_name: string
+  last_name: string
   email: string
 }
 
 const INITIAL_FORM_STATE = {
-  name: '',
+  first_name: '',
+  last_name: '',
   email: ''
 }
 
-export default function UserForm () {
+export default function UserForm() {
   const [formState, setFormState] = useState<UserFormState>(INITIAL_FORM_STATE)
 
-  const handleOnChangeName = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFormState(prevState => ({
       ...prevState,
-      name: event.target.value
-    }))
-  }
-
-  const handleOnChangeEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setFormState(prevState => ({
-      ...prevState,
-      email: event.target.value
+      [event.target.name]: event.target.value
     }))
   }
 
@@ -39,18 +34,22 @@ export default function UserForm () {
     console.log('🚀 :: ', formState)
   }
 
-  const isSubmitDisabled = () => !formState.name || !formState.email
+  const isSubmitDisabled = () => !formState.first_name || !formState.last_name || !formState.email
 
   return (
     <div className={styles.form__container}>
       <form className={styles.form__wrapper}>
         <label>
-          Name
-          <input type='text' value={formState.name} onChange={handleOnChangeName} />
+          First name
+          <input type='text' name='first_name' value={formState.first_name} onChange={handleOnChange} />
+        </label>
+        <label>
+          Last name
+          <input type='text' name='last_name' value={formState.last_name} onChange={handleOnChange} />
         </label>
         <label>
           @email
-          <input type='text' value={formState.email} onChange={handleOnChangeEmail} />
+          <input type='text' name='email' value={formState.email} onChange={handleOnChange} />
         </label>
       </form>
       <div className={styles['button-set__wrapper']}>
