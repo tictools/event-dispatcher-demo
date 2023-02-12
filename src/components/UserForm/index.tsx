@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import http from '../../services/http'
 import styles from './UserForm.module.css'
 
 interface UserFormState {
@@ -31,7 +32,10 @@ export default function UserForm() {
   }
 
   const handleSubmit = () => {
-    console.log('🚀 :: ', formState)
+    console.log('🚀 :: insert request dispatched')
+    http.insertData({ url: 'https://reqres.in/api/users', payload: formState })
+      .then(() => console.log('🚀 :: insert response received'))
+      .catch(error => console.log({ error }))
   }
 
   const isSubmitDisabled = () => !formState.first_name || !formState.last_name || !formState.email

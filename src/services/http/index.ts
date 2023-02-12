@@ -1,5 +1,7 @@
-import fetchRequest from './requestData'
+import insertData from './insertData'
+import requestData from './requestData'
 
 export default {
-  fetchRequest
+  insertData,
+  requestData
 }
