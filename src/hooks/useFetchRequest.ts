@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
 import http from '../services/http'
 
-interface UseFetchRequestState {
-  state: 'idle' | 'loading' | 'success' | 'error'
-  data: any | null
+type ResponseState = 'idle' | 'loading' | 'success' | 'error'
+
+interface UseFetchRequestState<GenericType> {
+  state: ResponseState
+  data: GenericType | null
   error: null | Error
 }
 
@@ -11,11 +13,11 @@ const INITIAL_STATE = {
   state: 'idle',
   data: null,
   error: null
-} as UseFetchRequestState
+}
 
-export default function useFetchRequest(url: string) {
+export default function useFetchRequest<GenericType>(url: string) {
   const [requestStatus, setRequestStatus] =
-    useState<UseFetchRequestState>(INITIAL_STATE)
+    useState<UseFetchRequestState<GenericType>>(INITIAL_STATE as UseFetchRequestState<GenericType>)
 
   const handleRequestSuccess = (data: any) => {
     setRequestStatus({
