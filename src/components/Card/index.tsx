@@ -2,10 +2,10 @@ import styles from './Card.module.css'
 
 interface CardProps {
   header: string
-  children: JSX.Element
+  children: React.ReactNode
 }
 
-export default function Card ({ header, children }: CardProps) {
+export default function Card({ header, children }: CardProps) {
   return (
     <section>
       <h2>{header}</h2>
