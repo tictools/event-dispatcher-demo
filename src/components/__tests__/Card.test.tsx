@@ -1,5 +1,5 @@
 // import '@testing-library/jest-dom'
-import { render, RenderResult } from "@testing-library/react"
+import { render, RenderResult } from '@testing-library/react'
 import Card from '../Card'
 
 describe('Card', () => {
@@ -27,6 +27,5 @@ describe('Card', () => {
       expect(child_2.innerHTML).toEqual('2nd child')
       expect(childElements.length).toEqual(2)
     })
-
   })
 })

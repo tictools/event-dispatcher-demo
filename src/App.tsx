@@ -4,10 +4,12 @@ import { UsersApiResponse } from './types'
 import CardsSection from './views/CardsSection'
 import UsersSection from './views/UsersSection'
 
-function App(): JSX.Element {
+function App (): JSX.Element {
   const requestStatus = useFetchRequest<UsersApiResponse>(
     'https://reqres.in/api/users?per_page=5'
   )
+
+  console.log({ requestStatus })
 
   return (
     <div className={styles.app__wrapper}>

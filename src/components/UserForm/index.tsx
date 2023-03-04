@@ -14,7 +14,7 @@ const INITIAL_FORM_STATE = {
   email: ''
 }
 
-export default function UserForm() {
+export default function UserForm () {
   const [formState, setFormState] = useState<UserFormState>(INITIAL_FORM_STATE)
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {

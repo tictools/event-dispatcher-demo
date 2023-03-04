@@ -6,7 +6,7 @@ interface UsersListProps {
   users: UserItem[]
 }
 
-export default function UsersList({ users }: UsersListProps) {
+export default function UsersList ({ users }: UsersListProps) {
   return (
     <div className={styles.users__container}>
       <ul className={styles.users__list}>
