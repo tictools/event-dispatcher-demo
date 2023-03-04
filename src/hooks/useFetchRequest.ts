@@ -15,9 +15,8 @@ const INITIAL_STATE = {
   error: null
 }
 
-export default function useFetchRequest<GenericType>(url: string) {
-  const [requestStatus, setRequestStatus] =
-    useState<UseFetchRequestState<GenericType>>(INITIAL_STATE as UseFetchRequestState<GenericType>)
+export const useFetchRequest = <GenericType>(url: string) => {
+  const [requestStatus, setRequestStatus] = useState<UseFetchRequestState<GenericType>>(INITIAL_STATE as UseFetchRequestState<GenericType>)
 
   const handleRequestSuccess = (data: any) => {
     setRequestStatus({

@@ -5,7 +5,7 @@ interface UserProps {
   user: UserItem
 }
 
-export default function User({ user }: UserProps) {
+export default function User ({ user }: UserProps) {
   return (
     <div className={styles.user__container}>
       <img

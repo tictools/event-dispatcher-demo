@@ -4,7 +4,7 @@ import UsersList from '../../components/UsersList'
 
 type UsersSectionProps = any
 
-export default function UsersSection({ requestStatus }: UsersSectionProps) {
+export default function UsersSection ({ requestStatus }: UsersSectionProps) {
   return (
     <>
       <h2>Users List</h2>
