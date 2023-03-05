@@ -1,1 +1,1 @@
-export { default as USER_ACTIONS } from './user';
+export { default as USER_EVENTS } from './user';

@@ -1,6 +1,8 @@
-const USER_ACTIONS = {
+const USER_EVENTS = {
   CREATE_USER_FETCH: 'CREATE_USER_FETCH',
   CREATE_USER_SUCCESS: 'CREATE_USER_SUCCESS'
 }
 
-export default USER_ACTIONS
+// type UserEvent
+
+export default USER_EVENTS
