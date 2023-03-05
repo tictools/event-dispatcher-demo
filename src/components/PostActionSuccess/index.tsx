@@ -1,4 +1,4 @@
-import usePostActionSuccess from "../../hooks/usePostActionSuccess"
+import { usePostActionSuccess } from "../../hooks"
 
 export default function PostActionSuccess() {
   const { response } = usePostActionSuccess()

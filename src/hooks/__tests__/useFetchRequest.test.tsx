@@ -1,6 +1,6 @@
 import { renderHook } from "@testing-library/react"
 import { UsersApiResponse } from "../../types"
-import { useFetchRequest } from "../useFetchRequest"
+import useFetchRequest from "../useFetchRequest"
 
 // TODO: check mock fetch implementation: https://runthatline.com/how-to-mock-fetch-api-with-vitest/
 describe('useFetchRequest', () => {

@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { EventDispatcherContext } from "../EventDispatcher"
 
-export const useEventDispatcherContext = () => {
+export default function useEventDispatcherContext() {
   return useContext(EventDispatcherContext)
 }

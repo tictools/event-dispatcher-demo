@@ -1,4 +1,4 @@
-import usePostActionRequest from "../../hooks/usePostActionRequest"
+import { usePostActionRequest } from "../../hooks"
 
 export default function PostActionRequest() {
   const { payload } = usePostActionRequest()

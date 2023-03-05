@@ -1,4 +1,4 @@
-import useForm from '../../hooks/useForm'
+import { useForm } from '../../hooks'
 import styles from './UserForm.module.css'
 
 interface UserFormState {

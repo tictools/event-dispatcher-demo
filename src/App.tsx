@@ -1,6 +1,6 @@
 import styles from './App.module.css'
 import { EventDispatcherContextProvider } from './EventDispatcher'
-import { useFetchRequest } from './hooks/useFetchRequest'
+import { useFetchRequest } from './hooks'
 import { UsersApiResponse } from './types'
 import CardsSection from './views/CardsSection'
 import UsersSection from './views/UsersSection'

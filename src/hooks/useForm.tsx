@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { USER_EVENTS } from "../EventDispatcher/actions"
 import http from "../services/http"
-import { useEventDispatcherContext } from "./useEventDispatcherContext"
+import useEventDispatcherContext from "./useEventDispatcherContext"
 
 interface UserFormState {
   first_name: string

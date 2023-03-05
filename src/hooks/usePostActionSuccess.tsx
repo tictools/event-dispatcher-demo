@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { USER_EVENTS } from "../EventDispatcher/actions"
-import { useEventDispatcherContext } from "./useEventDispatcherContext"
+import useEventDispatcherContext from "./useEventDispatcherContext"
 
 export default function usePostActionSuccess() {
   const eventDispatcher = useEventDispatcherContext()
