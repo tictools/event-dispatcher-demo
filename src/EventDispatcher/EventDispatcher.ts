@@ -1,4 +1,4 @@
-import { Dispatcher } from "./dispatcher.types"
+import { Dispatcher } from "./types"
 
 export default class EventDispatcher implements Dispatcher {
   private eventListeners: any = {}
