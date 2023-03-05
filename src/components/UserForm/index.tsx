@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import http from '../../services/http'
+import { useForm } from '../../hooks'
 import styles from './UserForm.module.css'
 
 interface UserFormState {
@@ -14,31 +13,14 @@ const INITIAL_FORM_STATE = {
   email: ''
 }
 
-export default function UserForm () {
-  const [formState, setFormState] = useState<UserFormState>(INITIAL_FORM_STATE)
-
-  const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setFormState(prevState => ({
-      ...prevState,
-      [event.target.name]: event.target.value
-    }))
-  }
-
-  const handleReset = () => {
-    setFormState(prevState => ({
-      ...prevState,
-      ...INITIAL_FORM_STATE
-    }))
-  }
-
-  const handleSubmit = () => {
-    console.log('🚀 :: insert request dispatched')
-    http.insertData({ url: 'https://reqres.in/api/users', payload: formState })
-      .then(() => console.log('🚀 :: insert response received'))
-      .catch(error => console.log({ error }))
-  }
-
-  const isSubmitDisabled = () => !formState.first_name || !formState.last_name || !formState.email
+export default function UserForm() {
+  const {
+    handleOnChange,
+    handleReset,
+    handleSubmit,
+    formState,
+    isSubmitDisabled
+  } = useForm()
 
   return (
     <div className={styles.form__container}>
