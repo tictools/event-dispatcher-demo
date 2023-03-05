@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { USER_ACTIONS } from '../../EventDispatcher/actions'
 import { useEventDispatcherContext } from '../../hooks/useEventDispatcherContext'
 import http from '../../services/http'
 import styles from './UserForm.module.css'
@@ -34,10 +35,10 @@ export default function UserForm() {
   }
 
   const handleSubmit = () => {
-    eventDispatcher.dispatch('CREATE_USER_FETCH', formState)
+    eventDispatcher.dispatch(USER_ACTIONS.CREATE_USER_FETCH, formState)
     http.insertData({ url: 'https://reqres.in/api/users', payload: formState })
       .then((response) => {
-        eventDispatcher.dispatch('CREATE_USER_SUCCESS', response)
+        eventDispatcher.dispatch(USER_ACTIONS.CREATE_USER_SUCCESS, response)
         handleReset()
       })
       .catch(error => console.log({ error }))

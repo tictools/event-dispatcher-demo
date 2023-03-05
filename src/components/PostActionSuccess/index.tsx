@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { USER_ACTIONS } from "../../EventDispatcher/actions"
 import { useEventDispatcherContext } from "../../hooks/useEventDispatcherContext"
 
 export default function PostActionSuccess() {
@@ -15,7 +16,7 @@ export default function PostActionSuccess() {
 
   useEffect(() => {
     eventDispatcher.subscribe(
-      'CREATE_USER_SUCCESS',
+      USER_ACTIONS.CREATE_USER_SUCCESS,
       updateData
     )
   }, [])

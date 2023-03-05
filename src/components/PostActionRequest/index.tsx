@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { USER_ACTIONS } from "../../EventDispatcher/actions"
 import { useEventDispatcherContext } from "../../hooks/useEventDispatcherContext"
 
 export default function PostActionRequest() {
@@ -17,7 +18,7 @@ export default function PostActionRequest() {
 
   useEffect(() => {
     eventDispatcher.subscribe(
-      'CREATE_USER_FETCH',
+      USER_ACTIONS.CREATE_USER_FETCH,
       updateData
     )
   }, [])
