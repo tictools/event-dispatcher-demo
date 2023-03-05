@@ -1,22 +1,40 @@
+import { UserEventsMapper, UserEventTypes } from "./actions/user"
 import { Dispatcher } from "./types"
 
-export default class EventDispatcher implements Dispatcher {
-  private eventListeners: any = {}
+type Listener<GenericEventType extends UserEventTypes> = (
+  payload: UserEventsMapper[GenericEventType]
+) => void
 
-  dispatch(type: any, payload: any) {
+type ListenersMapper = {
+  [GenericEventType in UserEventTypes]?: Listener<GenericEventType>[]
+}
+
+export default class EventDispatcher implements Dispatcher {
+  private eventListeners: ListenersMapper = {}
+
+  dispatch<GenericEventType extends UserEventTypes>(
+    type: GenericEventType,
+    payload: UserEventsMapper[GenericEventType]
+  ) {
     const eventListener = this.eventListeners[type]
     eventListener?.forEach((listener: any) => listener(payload))
   }
 
-  subscribe(type: any, listener: any) {
+  subscribe<GenericEventType extends UserEventTypes>(
+    type: GenericEventType,
+    listener: Listener<GenericEventType>
+  ) {
     const eventListener = this.eventListeners[type]
     this.eventListeners = {
       ...this.eventListeners,
-      [type]: !eventListener ? [listener] : [...this.eventListeners[type], listener]
+      [type]: !eventListener ? [listener] : [...this.eventListeners[type] as Listener<GenericEventType>[], listener]
     }
 
     return () => {
-      this.eventListeners = this.eventListeners[type].filter((eventListener: any) => eventListener !== listener)
+      this.eventListeners = {
+        ...this.eventListeners,
+        [type]: this.eventListeners[type]?.filter((eventListener: any) => eventListener !== listener)
+      }
     }
   }
 }
