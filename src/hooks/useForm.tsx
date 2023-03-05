@@ -14,6 +14,7 @@ const INITIAL_FORM_STATE = {
   last_name: '',
   email: ''
 }
+
 export default function useForm() {
   const eventDispatcher = useEventDispatcherContext()
   const [formState, setFormState] = useState<UserFormState>(INITIAL_FORM_STATE)
